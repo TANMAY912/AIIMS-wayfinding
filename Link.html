@@ -1,34 +1,54 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-
-
-
-<script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"> </script>
-  <input type=text class=qrcode-text>
-  <input type=file
-       accept="image/*"
-       capture=environment
-       onchange="openQRCamera(this);"
-       tabindex=-1>
-
-<script>
-  function openQRCamera(node) {
-  var reader = new FileReader();
-  reader.onload = function() {
-    node.value = "";
-    qrcode.callback = function(res) {
-      if(res instanceof Error) {
-        alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
-      } else {
-        node.parentNode.previousElementSibling.value = res;
-      }
-    };
-    qrcode.decode(reader.result);
-  };
-
-  reader.readAsDataURL(node.files[0]);
+<h1 style="text-align:center">please take a picture of your QR code and choose it from option below</h1>
+  <body>
+    <style>
+    .qrcode-text {
+  padding-right: 1.7em;
+  margin-right: 0;
+  vertical-align: right;
 }
- </script>
 
+.qrcode-text + .qrcode-text-btn {
+  margin-left: 4.5em;
+  vertical-align: right;
+}
+    </style>
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+    <script>
+    function openQRCamera(node) {
+var reader = new FileReader();
+reader.onload = function() {
+  node.value = "";
+  qrcode.callback = function(res) {
+    if(res instanceof Error) {
+      alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
+    } else {
+      node.parentNode.previousElementSibling.value = res;
+    }
+  };
+  qrcode.decode(reader.result);
+};
+reader.readAsDataURL(node.files[0]);
+}
+    </script>
+    <script>
+    function showQRIntro() {
+return confirm("Use your camera to take a picture of a QR code.");
+}
+    </script>
+    <p style="text-align:center">
+    <input type=file
+           accept="image/*"
+           capture=environment
+           onclick="return showQRIntro();"
+           onchange="openQRCamera(this);"
+           tabindex=-1></p>
 
-</body>
+    <p style="text-align:center"><input type=text class=qrcode-text
+><label class=qrcode-text-btn>
+
+</label></p>
+  </body>
 </html>
