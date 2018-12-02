@@ -1,13 +1,32 @@
-<!DOCTYPE html>
 <html>
-<body>
+
+
+
 <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"> </script>
+
+.qrcode-text-btn {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  background: url(qr_icon.svg) 50% 50% no-repeat;
+  cursor: pointer;
+}
+
+.qrcode-text-btn > input[type=file] {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+ <label class=qrcode-text-btn>
   <input type=file
        accept="image/*"
        capture=environment
        onchange="openQRCamera(this);"
        tabindex=-1>
-  <script>
+</label> 
+<script>
   function openQRCamera(node) {
   var reader = new FileReader();
   reader.onload = function() {
@@ -24,7 +43,7 @@
 
   reader.readAsDataURL(node.files[0]);
 }
-      </script>
+ </script>
 
 
 </body>
