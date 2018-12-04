@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html>
-<body>
+<head>
 <h1 style="text-align:center">Welcome to All India Institute of Medical Sciences,New Delhi</h1>
 <script>
 var url_string = window.location.href; //window.location.href
 var url = new URL(url_string);
-var c = url.searchParams.get("room_id");
-var nav = "https://www.w3schools.com/?room_id=" + c + "";
+var room_no = url.searchParams.get("RN");
+var name = url.searchParams.get("N");
+var uhid = url.searchParams.get("UHID");
+var date = url.searchParams.get("D");
+var nav = "https://www.w3schools.com/?RN=" + room_no;
+var app = "https://www.w3schools.com/?UHID=" + uhid;
 console.log(c);
 </script>
+</head>
+<body>
 <p  style="text-align:center">1. <script> document.write('<a href="' + nav + '">Navigation</a>'); </script></p>
-<p  style="text-align:center">2. <a href="https://www.w3schools.com">Followback appointment</a></p>
-<p  style="text-align:center">3. <a href="https://www.w3schools.com">Download report</a></p> 
-<p  style="text-align:center"><input type=text class=qrcode-text>
-<label class=qrcode-text-btn>
-<input  type=file
-	accept="image/*"
-	capture=environment
-	tabindex=-1>
-</label>
-</p>
+<p  style="text-align:center">2. <script> document.write('<a href="' + app + '">Follow Up Appointment</a>'); </script></p>
 </body>
 </html>
