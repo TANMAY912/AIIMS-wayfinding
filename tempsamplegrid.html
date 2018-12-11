@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+         .grid-container {
+         display: inline-grid;
+         grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+         <!--background-color: #2345F4;-->
+         padding: 0px;
+         }
+         .grid-item {
+         <!--background-color: rgba(255, 255, 255, 0.8);-->
+         border: 0px solid rgba(0, 0, 0, 0.8);
+         padding: 20px;
+         font-size: 30px;
+         text-align: center;
+         opacity: 0.5;
+         }
+         #example2 {
+         padding: 0px;
+         background: url(image.jpg);
+         background-repeat: no-repeat;
+         background-size: 400px 400px;
+         }
+      </style>
+      <script>
+         function clk(i)
+         {
+             var resp = "Clicked at => " + i;
+             document.getElementById("response").innerHTML = resp;
+             document.getElementById(i).style.backgroundColor = "red";
+         }
+       	 
+         
+         var i;
+         for(i=1;i=<1000;i++){
+         	var div = document.createElement('div');
+         	div.setAttribute("class", "grid-item");
+         	div.setAttribute("id", i);
+         	div.setAttribute("onclick", clk(i));
+            document.getElementById("example2").appendChild(div);
+         }
+         
+</script>
+      </script>
+   </head>
+   <body>
+      <h1>Sample grid</h1>
+      <div id="example2" class="grid-container">
+      
+      </div>     
+      <p id = "response">Clicked at => </p>
+   </body>
+</html>
