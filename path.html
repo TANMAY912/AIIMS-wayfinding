@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+         .grid-container {
+         display: inline-grid;
+         grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+         <!--background-color: #2345F4;-->
+         padding: 0px;
+         }
+         .grid-item {
+         <!--background-color: rgba(255, 255, 255, 0.8);-->
+         border: 0px solid rgba(0, 0, 0, 0.8);
+         padding: 20px;
+         font-size: 30px;
+         text-align: center;
+         opacity: 0.5;
+         }
+         #example2 {
+         padding: 0px;
+         background: url(image.jpg);
+         background-repeat: no-repeat;
+         background-size: 400px 400px;
+         }
+      </style>
+      <script>
+         var cords = [];
+         function clk(i)
+         {
+             var resp = "Clicked at => " + i;
+             if(cords.length > 1){
+               alert("you have selected 2 points");
+             } else {
+               <!--document.getElementById("response").innerHTML = resp;-->
+               document.getElementById(i).style.backgroundColor = "red";
+               <!--document.getElementById("test").innerHTML = cords.length;-->
+               cords.push(i);
+             }
+
+         }
+         function greenify(i){
+           document.getElementById(i).style.backgroundColor = "green";
+         }
+         function redify(i){
+           document.getElementById(i).style.backgroundColor = "red";
+         }
+         function path(x,y){
+             var a,b,c,d,e,f,g;
+             a = Math.floor(x/10); b = x%10;
+             c = Math.floor(y/10); d = y%10;
+             e = Math.floor((a+c)/2);
+             f = Math.floor((b+d)/2);
+             if (e==a & f==b) {
+               g = 10*c +b ;
+               greenify(g);
+             }
+             else if (e==c & f==d) {
+               g = 10*a +d ;
+               greenify(g);
+             } else {
+               g = 10*e + f;
+               greenify(g);
+               path(g,x);
+               path(g,y);
+             }
+         }
+         function finalpath(x,y){
+           path(x,y);
+           redify(x);
+           redify(y);
+         }
+      </script>
+   </head>
+   <body>
+      <h1>Sample grid</h1>
+      <div id="example2">
+         <div class="grid-container">
+            <div class="grid-item" id = "0" onclick = "clk(00)"></div>
+            <div class="grid-item" id = "1" onclick = "clk(01)"></div>
+            <div class="grid-item" id = "2" onclick = "clk(02)"></div>
+            <div class="grid-item" id = "3" onclick = "clk(03)"></div>
+            <div class="grid-item" id = "4" onclick = "clk(04)"></div>
+            <div class="grid-item" id = "5" onclick = "clk(05)"></div>
+            <div class="grid-item" id = "6" onclick = "clk(06)"></div>
+            <div class="grid-item" id = "7" onclick = "clk(07)"></div>
+            <div class="grid-item" id = "8" onclick = "clk(08)"></div>
+            <div class="grid-item" id = "9" onclick = "clk(09)"></div>
+            <div class="grid-item" id = "10" onclick = "clk(10)"></div>
+            <div class="grid-item" id = "11" onclick = "clk(11)"></div>
+            <div class="grid-item" id = "12" onclick = "clk(12)"></div>
+            <div class="grid-item" id = "13" onclick = "clk(13)"></div>
+            <div class="grid-item" id = "14" onclick = "clk(14)"></div>
+            <div class="grid-item" id = "15" onclick = "clk(15)"></div>
+            <div class="grid-item" id = "16" onclick = "clk(16)"></div>
+            <div class="grid-item" id = "17" onclick = "clk(17)"></div>
+            <div class="grid-item" id = "18" onclick = "clk(18)"></div>
+            <div class="grid-item" id = "19" onclick = "clk(19)"></div>
+            <div class="grid-item" id = "20" onclick = "clk(20)"></div>
+            <div class="grid-item" id = "21" onclick = "clk(21)"></div>
+            <div class="grid-item" id = "22" onclick = "clk(22)"></div>
+            <div class="grid-item" id = "23" onclick = "clk(23)"></div>
+            <div class="grid-item" id = "24" onclick = "clk(24)"></div>
+            <div class="grid-item" id = "25" onclick = "clk(25)"></div>
+            <div class="grid-item" id = "26" onclick = "clk(26)"></div>
+            <div class="grid-item" id = "27" onclick = "clk(27)"></div>
+            <div class="grid-item" id = "28" onclick = "clk(28)"></div>
+            <div class="grid-item" id = "29" onclick = "clk(29)"></div>
+            <div class="grid-item" id = "30" onclick = "clk(30)"></div>
+            <div class="grid-item" id = "31" onclick = "clk(31)"></div>
+            <div class="grid-item" id = "32" onclick = "clk(32)"></div>
+            <div class="grid-item" id = "33" onclick = "clk(33)"></div>
+            <div class="grid-item" id = "34" onclick = "clk(34)"></div>
+            <div class="grid-item" id = "35" onclick = "clk(35)"></div>
+            <div class="grid-item" id = "36" onclick = "clk(36)"></div>
+            <div class="grid-item" id = "37" onclick = "clk(37)"></div>
+            <div class="grid-item" id = "38" onclick = "clk(38)"></div>
+            <div class="grid-item" id = "39" onclick = "clk(39)"></div>
+            <div class="grid-item" id = "40" onclick = "clk(40)"></div>
+            <div class="grid-item" id = "41" onclick = "clk(41)"></div>
+            <div class="grid-item" id = "42" onclick = "clk(42)"></div>
+            <div class="grid-item" id = "43" onclick = "clk(43)"></div>
+            <div class="grid-item" id = "44" onclick = "clk(44)"></div>
+            <div class="grid-item" id = "45" onclick = "clk(45)"></div>
+            <div class="grid-item" id = "46" onclick = "clk(46)"></div>
+            <div class="grid-item" id = "47" onclick = "clk(47)"></div>
+            <div class="grid-item" id = "48" onclick = "clk(48)"></div>
+            <div class="grid-item" id = "49" onclick = "clk(49)"></div>
+            <div class="grid-item" id = "50" onclick = "clk(50)"></div>
+            <div class="grid-item" id = "51" onclick = "clk(51)"></div>
+            <div class="grid-item" id = "52" onclick = "clk(52)"></div>
+            <div class="grid-item" id = "53" onclick = "clk(53)"></div>
+            <div class="grid-item" id = "54" onclick = "clk(54)"></div>
+            <div class="grid-item" id = "55" onclick = "clk(55)"></div>
+            <div class="grid-item" id = "56" onclick = "clk(56)"></div>
+            <div class="grid-item" id = "57" onclick = "clk(57)"></div>
+            <div class="grid-item" id = "58" onclick = "clk(58)"></div>
+            <div class="grid-item" id = "59" onclick = "clk(59)"></div>
+            <div class="grid-item" id = "60" onclick = "clk(60)"></div>
+            <div class="grid-item" id = "61" onclick = "clk(61)"></div>
+            <div class="grid-item" id = "62" onclick = "clk(62)"></div>
+            <div class="grid-item" id = "63" onclick = "clk(63)"></div>
+            <div class="grid-item" id = "64" onclick = "clk(64)"></div>
+            <div class="grid-item" id = "65" onclick = "clk(65)"></div>
+            <div class="grid-item" id = "66" onclick = "clk(66)"></div>
+            <div class="grid-item" id = "67" onclick = "clk(67)"></div>
+            <div class="grid-item" id = "68" onclick = "clk(68)"></div>
+            <div class="grid-item" id = "69" onclick = "clk(69)"></div>
+            <div class="grid-item" id = "70" onclick = "clk(70)"></div>
+            <div class="grid-item" id = "71" onclick = "clk(71)"></div>
+            <div class="grid-item" id = "72" onclick = "clk(72)"></div>
+            <div class="grid-item" id = "73" onclick = "clk(73)"></div>
+            <div class="grid-item" id = "74" onclick = "clk(74)"></div>
+            <div class="grid-item" id = "75" onclick = "clk(75)"></div>
+            <div class="grid-item" id = "76" onclick = "clk(76)"></div>
+            <div class="grid-item" id = "77" onclick = "clk(77)"></div>
+            <div class="grid-item" id = "78" onclick = "clk(78)"></div>
+            <div class="grid-item" id = "79" onclick = "clk(79)"></div>
+            <div class="grid-item" id = "80" onclick = "clk(80)"></div>
+            <div class="grid-item" id = "81" onclick = "clk(81)"></div>
+            <div class="grid-item" id = "82" onclick = "clk(82)"></div>
+            <div class="grid-item" id = "83" onclick = "clk(83)"></div>
+            <div class="grid-item" id = "84" onclick = "clk(84)"></div>
+            <div class="grid-item" id = "85" onclick = "clk(85)"></div>
+            <div class="grid-item" id = "86" onclick = "clk(86)"></div>
+            <div class="grid-item" id = "87" onclick = "clk(87)"></div>
+            <div class="grid-item" id = "88" onclick = "clk(88)"></div>
+            <div class="grid-item" id = "89" onclick = "clk(89)"></div>
+            <div class="grid-item" id = "90" onclick = "clk(90)"></div>
+            <div class="grid-item" id = "91" onclick = "clk(91)"></div>
+            <div class="grid-item" id = "92" onclick = "clk(92)"></div>
+            <div class="grid-item" id = "93" onclick = "clk(93)"></div>
+            <div class="grid-item" id = "94" onclick = "clk(94)"></div>
+            <div class="grid-item" id = "95" onclick = "clk(95)"></div>
+            <div class="grid-item" id = "96" onclick = "clk(96)"></div>
+            <div class="grid-item" id = "97" onclick = "clk(97)"></div>
+            <div class="grid-item" id = "98" onclick = "clk(98)"></div>
+            <div class="grid-item" id = "99" onclick = "clk(99)"></div>
+         </div>
+      </div>
+      <button type="button" onclick ="finalpath(cords[0],cords[1])" >JOIN</button>
+      <!--<p id = "response">Clicked at => </p>-->
+      <p id = "test"></p>
+   </body>
+</html>
