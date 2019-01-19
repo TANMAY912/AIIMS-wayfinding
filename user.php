@@ -125,6 +125,14 @@
 
            blue(path[b]);
 
+           for (var b = 0; b < path.length; b++) {
+             for (var c = 0; c < obj.cords.length; c++) {
+               if(path[b]==obj.cords[c].value){
+                document.getElementById("display_name").innerHTML+=obj.cords[c].name;
+               }
+             }
+           }
+
            
 
 
@@ -377,16 +385,7 @@
       </select><br>
 
 	<button id = "submit" type = "button" onclick = "Submit()">Submit</button>
-  <script>
-    if(path.length!=0){
-      var obj = JSON.parse(tr);
-      document.write("<textarea rows="4" cols="50">");
-      for(var b=0;b<obj.cords.length;b++){
-          document.write(obj.cords[b].Tags+", ");
-      }
-      document.write("</textarea>");
-
-    }
+  <textarea id="display_name" rows="1" cols="1"></textarea>
   </script>
    </body>
 </html>
