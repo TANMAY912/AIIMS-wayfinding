@@ -26,16 +26,16 @@
       </style>
       <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
       <script>
-      // <?php
-      // $dbhost = "localhost";
-      // $dbuser = "root";
-      // $dbpass = "root";
-      // $database="mysql";
-      // $conn = new mysqli($dbhost, $dbuser, $dbpass,$database);
-      // $sql = "SELECT JSON_string FROM mysql.first_test WHERE name = 'AIIMS' limit 1";
-      // $result = mysqli_query($conn, $sql);
-      // $row = mysqli_fetch_assoc($result);
-      // ?>
+      <?php
+      $dbhost = "localhost";
+      $dbuser = "root";
+      $dbpass = "root";
+      $database="mysql";
+      $conn = new mysqli($dbhost, $dbuser, $dbpass,$database);
+      $sql = "SELECT JSON_string FROM mysql.first_test WHERE name = 'AIIMS' limit 1";
+      $result = mysqli_query($conn, $sql);
+      $row = mysqli_fetch_assoc($result);
+      ?>
 
         var cords = [];
         var connected_nodes = [];
