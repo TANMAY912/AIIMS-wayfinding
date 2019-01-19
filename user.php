@@ -384,6 +384,7 @@
       for(var b=0;b<obj.cords.length;b++){
           document.write(obj.cords[b].Tags+", ");
       }
+      document.write("</textarea>");
 
     }
   </script>
